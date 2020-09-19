@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vendor_app/screens/welcome_screen.dart';
+
+import 'screens/dashboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: WelcomeScreen(),
+      home: DashBoard(),
     );
   }
 }
