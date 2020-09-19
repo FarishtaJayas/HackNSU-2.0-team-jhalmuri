@@ -19,6 +19,7 @@ class InputBox extends StatelessWidget {
         height: 42.0,
         child: Text(
           title,
+          style: TextStyle(fontSize: 20.0),
         ),
       ),
     );

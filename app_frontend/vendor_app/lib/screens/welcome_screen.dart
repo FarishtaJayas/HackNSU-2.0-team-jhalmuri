@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_app/constants.dart';
-import 'package:vendor_app/widgets/input_box.dart';
+import 'package:vendor_app/widgets/welcome_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -18,15 +18,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'ProcureBD',
-              style: TextStyle(
-                  fontSize: 60.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white70),
+            Image.asset(
+              'images/logo.png',
+              height: 100,
+              width: 100,
+            ),
+            Center(
+              child: Text(
+                'ProcureBD',
+                style: TextStyle(
+                    fontSize: 60.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white70),
+              ),
             ),
             SizedBox(
-              height: 50.0,
+              height: 30.0,
             ),
             InputBox(
               color: Colors.white70,
