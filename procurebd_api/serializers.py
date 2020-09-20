@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from procurebd_api.models import ProfileUser
+from procurebd_api.models import Item
+
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -9,5 +11,9 @@ class UserSerializer(serializers.ModelSerializer):
         #fields = ('name', 'ranking')
         fields = '__all__'
         
+class ItemSerializer(serializers.ModelSerializer):
+    
         
-        
+    class Meta:
+        model = Item
+        fields ='__all__'

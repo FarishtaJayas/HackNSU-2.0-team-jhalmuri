@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .serializers import *
 # Create your views here.
 
-
+#User Model
 class UserAuthentication(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'request': request})
@@ -72,3 +72,26 @@ class UserDetail(APIView):
         model.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
+#Item Models
+
+class ItemList(APIView):
+    
+    
+    def get(self, request):
+        
+        model = Item.objects.all()
+        serializer = ItemSerializer(model, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        
+        
+        model = Item.objects.all()
+        serializer = ItemSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+
