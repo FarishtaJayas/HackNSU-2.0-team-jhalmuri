@@ -1,0 +1,14 @@
+.container{
+    margin: 50px ;
+}
+.navbar{
+    height: 70px;
+}
+.logo{
+    position:fixed; 
+    top:-65px; 
+    left:40px;
+}
+label{
+    color: #0e1a35;
+}

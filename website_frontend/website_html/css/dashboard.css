@@ -1,3 +1,9 @@
+/*Main CSS*/
+
+
+/*Login Signup Page*/
+
+
 a:focus,a:hover,a{
     outline:none;
     text-decoration: none;
@@ -7,6 +13,7 @@ li,ul{
     padding: 0;
     margin: 0;
 }
+
 .header-top i {
     font-size: 18px;
 }
@@ -216,6 +223,7 @@ li,ul{
 }
 
 .header-top {
+    top: -65px;
     margin: 0;
     padding-top: 2px;
 }
@@ -240,7 +248,15 @@ li,ul{
 .header-rightside .nav > li > a:hover {
     background: none;
     text-decoration: none;
+    left: 500px;
 }
+
+#ordertable{
+    top: auto;
+    left: auto;
+}
+
+.table.ordertable
 
 .add-project::before {
     background: rgba(0, 0, 0, 0) url("../images/plus.png") no-repeat scroll 0 0;
@@ -345,12 +361,13 @@ header {
 }
 
 .logo {
-    text-align: center;
+    top:-500px; 
+    left:40px;
 }
 
 .navi a {
     border-bottom: 1px solid #0d172e;
-    border-top: 1px solid #0d172e;
+    border-top: 10px solid #0d172e;
     color: #ffffff;
     display: block;
     font-size: 17px;
