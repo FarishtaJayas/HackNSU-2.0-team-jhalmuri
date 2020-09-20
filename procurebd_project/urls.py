@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from procurebd_api.views import UserList, UserDetail, UserAuthentication, ItemList
+from procurebd_api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'views/profileuser_list/(?P<id>\d+)$', UserDetail.as_view(), name='user_list'),
     url(r'views/auth/$', UserAuthentication.as_view(), name='User Authentication API'),
     
+    #Item URLS
     url(r'views/item_list/$', ItemList.as_view(), name='item_list'),
+    url(r'views/item_list/(?P<item_name>\w+)$', ItemDetail.as_view(), name='item_by_name'),
     
 ]

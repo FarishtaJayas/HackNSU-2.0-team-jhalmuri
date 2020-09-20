@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .serializers import *
 # Create your views here.
 
-#User Model
+
 class UserAuthentication(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'request': request})
@@ -15,7 +15,7 @@ class UserAuthentication(ObtainAuthToken):
         token, created = Token.objects.get_or_create(user=user)
         return Response(token.key)
 
-
+#User Functions
 class UserList(APIView):
     def get(self, request):
         
@@ -72,7 +72,7 @@ class UserDetail(APIView):
         model.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-#Item Models
+#Item Functions are here
 
 class ItemList(APIView):
     
@@ -92,6 +92,43 @@ class ItemList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ItemDetail(APIView):
+    
+    
+    def get_item(self, item_name):
+        try:
+            model = Item.objects.get(item_name=item_name)
+            return model
+        except Item.DoesNotExist:
+            return 
+        
+        
+    def get(self, request, item_name):
+        
+        
+        if not self.get_item(item_name): 
+            return Response(f'{item_name} is NOT in the DATABASE')
+        serializer = ItemSerializer(self.get_item(item_name))  
+        return Response(serializer.data)
+    
+    
+    def put(self, request, item_name):
+        
+        
+        serializer = ItemSerializer(self.get_item(item_name), data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    def delete(self, request, item_name):
+        
+        
+        model = self.get_item(item_name)
+        model.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
     
 
 
