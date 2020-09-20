@@ -1,28 +1,29 @@
 <!doctype html>
 <html lang="en">
   <head>
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
     <script type="text/javascript" src="dashboard.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/chartbar.js"></script>
+</head>
+
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <body class="home">
     <div class="container-fluid display-table">
         <div class="row display-table-row">
-            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-                <div class="logo">
-                    <a hef="home.html"><img src="logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
-                        <img src="logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
-                    </a>
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation" style="top: -65px;">
+                <div class="logo" style="top: -50px;">
+                    <a hef="home.html"><img src="assets/logo.png" >
+                        </a>
                 </div>
                 <div class="navi">
                     <ul>
-                        <li ><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
                         <li class="active"><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Vendors</span></a></li>
                         <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Inventory</span></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Orders</span></a></li>
@@ -46,17 +47,15 @@
                                     </button>
                                 </div>
                             </nav>
-                            <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
-                            </div>
+                            
                         </div>
                         <div class="col-md-5">
                             <div class="header-rightside">
-                                <ul class="list-inline header-top pull-right">
-                                    <a href="#"  class="btn btn-outline-primary">CREATE</a>
-                                    <a href="#"  class="btn btn-outline-primary">Alerts</a>
-                                    <a href="#"  class="btn btn-outline-primary">Approval</a>
-                                    <a href="#"  class="btn btn-outline-primary">Account</a>
+                                <ul class="list-inline header-top pull-right" >
+                    
+                                    <a href="#"  class="btn btn-sm btn-primary"style="background-color: #0e1a35 ; color:aliceblue">Alerts</a>
+                                    <a href="#"  class="btn btn-sm btn-primary" style="background-color: #0e1a35 ; color:aliceblue">Approval</a>
+                                    <a href="#"  class="btn btn-sm btn-primary" style="background-color: #0e1a35 ; color:aliceblue">Account</a>
                                              </div>
                                             </li>
                                         </ul>
@@ -64,7 +63,77 @@
                                     </li>
                                 </ul>
                             </div>
-
+                            <br>
                             
+                    </header>
+                </div>
+
+                <div class="container">
+                   
+                <form>
+                    <div class="row">
+                        <div class="col">
+                    <div class=" form-group" style="margin-top: 50px; width: 50rem; left: 50px;">
+                        
+                      <button type="button" class="btn btn-outline-primary" style="background-color:#0e1a35; margin-left: 50% 50px; color:aliceblue">ADD NEW</button> <br>
+                      <br>
+                      <label>Company Name</label>
+                      <input type="name" class="form-control" placeholder="Enter Company Name">
+                    </div>
+                    <div class="form-group" style= "width: 50rem;">
+                        <label>Email</label>
+                        <input type="email" class="form-control"  placeholder="Enter Email">
+                      </div>
+                      <div class="form-group" style="width: 50rem;">
+                        <label>Phone Number</label>
+                        <input type="number" class="form-control"  placeholder="Enter Phone Number">
+                      </div>
+                      <div class="form-group" style="width: 50rem;">
+                        <label>Address</label>
+                        <input type="addresss" class="form-control"  placeholder="Enter Address">
+                      </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="background-color:#0e1a35; color:aliceblue">Submit</button>
+                    </form>
+                    </div>
+
+                   
+                        
+                    <br>
+                    <table class="table thread-light" style="margin-top: 50px; width: 100%;">
+                        <thead style="color: #495057; background-color: #e9ecef; border-color: #e9ecef;">
+                         <tr>
+                         <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Number</th>
+                         <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Vendor Name</th>
+                         <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Vendor Status</th>
+                         </tr>
+                         </thead>
+                         <tbody>
+                         <tr>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">1</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Active</td>
+                         </tr>
+                         <tr>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">2</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Inactive</td>
+                         </tr>
+                         <tr>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">3</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Active</td>
+                         </tr>
+                         </tbody>
+                        </table>
+
+                   
+                  <footer class="footer">
+                    Email: info@procurebd.com
+                  </footer>
+                  
+                  
+
+
 </body>
 </html>
