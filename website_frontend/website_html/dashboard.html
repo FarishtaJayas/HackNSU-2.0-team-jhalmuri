@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
@@ -9,8 +8,9 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  </head>
-<!------ Include the above in your HEAD tag ---------->
+    <script src="js/chartbar.js"></script>
+</head>
+
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <body class="home">
@@ -52,7 +52,7 @@
                         <div class="col-md-5">
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right" >
-                                    <a href="#"  class="btn btn-sm btn-primary" style="background-color: #0e1a35 ; color:aliceblue">CREATE</a>
+                    
                                     <a href="#"  class="btn btn-sm btn-primary"style="background-color: #0e1a35 ; color:aliceblue">Alerts</a>
                                     <a href="#"  class="btn btn-sm btn-primary" style="background-color: #0e1a35 ; color:aliceblue">Approval</a>
                                     <a href="#"  class="btn btn-sm btn-primary" style="background-color: #0e1a35 ; color:aliceblue">Account</a>
@@ -64,35 +64,41 @@
                                 </ul>
                             </div>
                             <br>
-                            <table class="table thread-light">
+                            <table class="table thread-light" style="margin-top: 50px; width: 50rem;">
                                 <thead style="color: #495057; background-color: #e9ecef; border-color: #e9ecef;">
                                  <tr>
                                  <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Number</th>
                                  <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Upcoming Orders</th>
-                                 <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Due date</th>
+                                 <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Due Date</th>
                                  </tr>
                                  </thead>
                                  <tbody>
                                  <tr>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">01</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"></td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"></td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">1</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Date</td>
                                  </tr>
                                  <tr>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">02</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"></td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">September 7th,2020</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">2</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Date</td>
                                  </tr>
                                  <tr>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">03</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"></td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">January 15th,2020</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">3</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
+                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Date</td>
                                  </tr>
                                  </tbody>
                                 </table>
                         </div>
                     </header>
                 </div>
+                   
+                  <footer class="footer">
+                    info@procurebd.com
+                  </footer>
+                  
+                  
 
 
 </body>
