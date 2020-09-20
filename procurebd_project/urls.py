@@ -28,4 +28,6 @@ urlpatterns = [
     url(r'views/item_list/$', ItemList.as_view(), name='item_list'),
     url(r'views/item_list/(?P<item_name>\w+)$', ItemDetail.as_view(), name='item_by_name'),
     
+    #Vendor URLS
+    
 ]

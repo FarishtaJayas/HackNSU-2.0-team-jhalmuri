@@ -24,8 +24,14 @@ class Item(models.Model):
         return self.item_name
     
 
+class Vendor(models.Model):
+    vendor_name = models.CharField(max_length=100)
+    vendor_email = models.EmailField(max_length=100, unique=True)
+    vendor_phone = models.CharField(max_length=200, unique=True)
+    vend_address = models.CharField(max_length=200)
     
-    
+    def __str__(self):
+        return self.vendor_name    
     
     
     

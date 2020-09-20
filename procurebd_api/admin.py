@@ -4,3 +4,4 @@ from procurebd_api.models import *
 
 admin.site.register(ProfileUser)
 admin.site.register(Item)
+admin.site.register(Vendor)
