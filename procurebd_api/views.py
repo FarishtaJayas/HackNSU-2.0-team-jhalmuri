@@ -130,5 +130,63 @@ class ItemDetail(APIView):
         model.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
+#Vendor Functions 
+
+class VendorList(APIView):
+    
+    
+    def get(self, request):
+        
+        model = Vendor.objects.all()
+        serializer = VendorSerializer(model, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        
+        
+        model = Vendor.objects.all()
+        serializer = VendorSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class VendorDetail(APIView):
+    
+    
+    def get_vendor(self, vendor_name):
+        try:
+            model = Vendor.objects.get(vendor_name=vendor_name)
+            return model
+        except Vendor.DoesNotExist:
+            return 
+        
+        
+    def get(self, request, vendor_name):
+        
+        
+        if not self.get_vendor(vendor_name): 
+            return Response(f'{vendor_name} is NOT in the DATABASE')
+        serializer = VendorSerializer(self.get_vendor(vendor_name))  
+        return Response(serializer.data)
+    
+    
+    def put(self, request, vendor_name):
+        
+        
+        serializer = VendorSerializer(self.get_vendor(vendor_name), data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    def delete(self, request, vendor_name):
+        
+        
+        model = self.get_vendor(vendor_name)
+        model.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
 
 

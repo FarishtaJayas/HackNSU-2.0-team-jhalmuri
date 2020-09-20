@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from procurebd_api.models import ProfileUser
-from procurebd_api.models import Item
+from procurebd_api.models import *
+
 
 
 
@@ -22,5 +22,5 @@ class VendorSerializer(serializers.ModelSerializer):
     
         
     class Meta:
-        model = Item
+        model = Vendor
         fields ='__all__'
