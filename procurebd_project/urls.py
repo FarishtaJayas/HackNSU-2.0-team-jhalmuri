@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from procurebd_api.views import UserList, UserDetail
+from procurebd_api.views import UserList, UserDetail, UserAuthentication
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'views/profileuser_list/$', UserList.as_view(), name='user_list'),
     url(r'views/profileuser_list/(?P<id>\d+)$', UserDetail.as_view(), name='user_list'),
+    url(r'views/auth/$', UserAuthentication.as_view(), name='User Authentication API'),
     
 ]
