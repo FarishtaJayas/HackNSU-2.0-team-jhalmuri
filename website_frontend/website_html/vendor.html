@@ -23,12 +23,12 @@
                 </div>
                 <div class="navi">
                     <ul>
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+                        <li><a href="dashboard.html"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
                         <li class="active"><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Vendors</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Inventory</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Orders</span></a></li>
+                        <li><a href="inventory.html"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Inventory</span></a></li>
+                        <li><a href="order.html"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Orders</span></a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Reports</span></a></li>
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Transactions</span></a></li>
+                        <li><a href="transaction.html"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Transactions</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <form>
                     <div class="row">
                         <div class="col">
-                    <div class=" form-group" style="margin-top: 50px; width: 50rem; left: 50px;">
+                    <div class=" form-group" style="margin-top: -50px; width: 50rem; left: 50px;">
                         
                       <h3>Add New Vendor </h3>
                       
@@ -106,32 +106,36 @@
                    
                         
                     <br>
-                    <table class="table thread-light" id= "vendor_list" style="margin-top: 50px; width: 100%;">
+                    <table class="table thread-light" id= "vendor_list" style="margin-top: 20px; width: 100%;">
                         <thead style="color: #495057; background-color: #e9ecef; border-color: #e9ecef;">
                          <tr>
                          <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Number</th>
                          <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Vendor Name</th>
-                         <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Vendor Status</th>
+                         <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Item Name</th>
+                         <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Unit Price</th>
                          </tr>
                          </thead>
                          <tbody>
                          <tr>
                          <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">1</td>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Active</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Bismillah Enterprise</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Button</td>
+                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">50</td>
                          </tr>
+
                          <tr>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">2</td>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Inactive</td>
-                         </tr>
+                            <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">2</td>
+                            <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Salam Enterprise</td>
+                            <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Button</td>
+                            <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">52</td>
+                            </tr>
                          <tr>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">3</td>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
-                         <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Active</td>
-                         </tr>
+
                          </tbody>
                         </table>
+                        
+                        <a href="order.html" class="btn btn-primary btn-sm active" role="button" aria-pressed="true" style="background-color: #0e1a35 ; color:aliceblue">order</a>
+
 
                    
                   <footer class="footer">
