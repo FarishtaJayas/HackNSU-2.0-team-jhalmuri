@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:toggle_switch/toggle_switch.dart';
 import 'package:vendor_app/constants.dart';
 import 'package:vendor_app/screens/contact_page.dart';
 import 'package:vendor_app/screens/inventory_page.dart';
@@ -20,7 +19,7 @@ class DashBoard extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 30.0),
                   child: Text(
-                    'Vendor',
+                    'Vendor View',
                     style: TextStyle(
                       fontSize: 43.0,
                       color: Colors.white70,
@@ -28,27 +27,25 @@ class DashBoard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 30.0,
+                  width: 20.0,
                 ),
-                ToggleSwitch(
-                  labels: ['Active', 'Inactive'],
-                  minWidth: 90.0,
-                  cornerRadius: 15.0,
-                  activeBgColor: Colors.pink,
-                  activeFgColor: Colors.white,
-                  inactiveBgColor: Colors.grey.shade700,
-                  inactiveFgColor: Colors.white,
-                  onToggle: (index) {
-                    print('switched to: $index');
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Inventory.id);
                   },
+                  color: Colors.pink,
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  child: Text(
+                    'Add Item',
+                    style: TextStyle(color: Colors.white70),
+                  ),
                 )
               ],
             ),
             Expanded(
               child: GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, Inventory.id);
-                },
+                onTap: () {},
                 child: Row(
                   children: [
                     MenuTile(

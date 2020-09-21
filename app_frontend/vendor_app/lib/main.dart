@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:vendor_app/screens/dashboard.dart';
-import 'package:vendor_app/screens/inventory_page.dart';
-import 'package:vendor_app/screens/welcome_screen.dart';
+import 'package:vendor_app/screens/contact_page.dart';
+import 'package:vendor_app/screens/login_screen.dart';
 
-import 'screens/contact_page.dart';
-import 'screens/login_screen.dart';
+import 'screens/dashboard.dart';
+import 'screens/inventory_page.dart';
 import 'screens/registrations_screen.dart';
+import 'screens/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
+        DashBoard.id: (context) => DashBoard(),
         LoginScreen.id: (context) => LoginScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
-        DashBoard.id: (context) => DashBoard(),
         Inventory.id: (context) => Inventory(),
         ContactPage.id: (context) => ContactPage(),
       },

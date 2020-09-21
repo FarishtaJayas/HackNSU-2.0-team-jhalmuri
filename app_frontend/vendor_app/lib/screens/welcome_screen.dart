@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_app/constants.dart';
-import 'package:vendor_app/screens/dashboard.dart';
+import 'package:vendor_app/screens/login_screen.dart';
 import 'package:vendor_app/widgets/welcome_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -40,7 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             InputBox(
               color: Colors.white70,
               onPressed: () {
-                Navigator.pushNamed(context, DashBoard.id);
+                Navigator.pushNamed(context, LoginScreen.id);
               },
               title: 'লগইন',
             ),
