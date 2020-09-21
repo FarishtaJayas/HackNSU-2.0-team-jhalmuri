@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:vendor_app/constants.dart';
+import 'package:vendor_app/screens/contact_page.dart';
+import 'package:vendor_app/screens/inventory_page.dart';
 import 'package:vendor_app/widgets/menu_tile.dart';
 
 class DashBoard extends StatelessWidget {
+  static String id = "dashboard_screen";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +46,9 @@ class DashBoard extends StatelessWidget {
             ),
             Expanded(
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Inventory.id);
+                },
                 child: Row(
                   children: [
                     MenuTile(
@@ -150,21 +155,26 @@ class DashBoard extends StatelessWidget {
                     ),
                   ),
                   MenuTile(
-                    childWidget: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'images/contact.png',
-                          height: 90,
-                          width: 90,
-                        ),
-                        Text(
-                          'যোগাযোগ করুন',
-                          style:
-                              TextStyle(fontSize: 20.0, color: Colors.white70),
-                        )
-                      ],
+                    childWidget: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, ContactPage.id);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'images/contact.png',
+                            height: 90,
+                            width: 90,
+                          ),
+                          Text(
+                            'যোগাযোগ করুন',
+                            style: TextStyle(
+                                fontSize: 20.0, color: Colors.white70),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
