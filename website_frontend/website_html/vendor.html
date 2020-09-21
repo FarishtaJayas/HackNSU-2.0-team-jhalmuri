@@ -8,7 +8,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="js/chartbar.js"></script>
+    <script src="js/vendor.js"></script>
 </head>
 
 
@@ -58,11 +58,14 @@
                                     <a href="#"  class="btn btn-sm btn-primary" style="background-color: #0e1a35 ; color:aliceblue">Account</a>
                                              </div>
                                             </li>
+                                            <nav class="navbar navbar-light bg-light">
+                                                <form class="form-inline">
+                                                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #0e1a35 ; color:aliceblue">Search</button>
+                                                </form>
+                                              </nav>
                                         </ul>
-                                        
-                                    </li>
-                                </ul>
-                            </div>
+                                    </div>
                             <br>
                             
                     </header>
@@ -75,16 +78,13 @@
                         <div class="col">
                     <div class=" form-group" style="margin-top: 50px; width: 50rem; left: 50px;">
                         
-<<<<<<< HEAD
                       <h3>Add New Vendor </h3>
                       
                       <label>Vendor Name</label>
-=======
-                      <button type="button" class="btn btn-outline-primary" style="background-color:#0e1a35; margin-left: 50% 50px; color:aliceblue">ADD NEW</button> <br>
-                      <br>
-                      <label>Company Name</label>
->>>>>>> c0bb8ea1215ea4b46c3b48db076c60e52f38a197
-                      <input type="name" class="form-control" placeholder="Enter Company Name">
+
+                      
+
+                      <input type="name" class="form-control" placeholder="Enter Vendor Company Name">
                     </div>
                     <div class="form-group" style= "width: 50rem;">
                         <label>Email</label>
@@ -106,7 +106,7 @@
                    
                         
                     <br>
-                    <table class="table thread-light" style="margin-top: 50px; width: 100%;">
+                    <table class="table thread-light" id= "vendor_list" style="margin-top: 50px; width: 100%;">
                         <thead style="color: #495057; background-color: #e9ecef; border-color: #e9ecef;">
                          <tr>
                          <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Number</th>
