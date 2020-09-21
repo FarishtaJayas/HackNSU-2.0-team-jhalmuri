@@ -3,6 +3,7 @@ import 'package:vendor_app/constants.dart';
 import 'package:vendor_app/widgets/welcome_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static String id = "welcome_screen";
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
