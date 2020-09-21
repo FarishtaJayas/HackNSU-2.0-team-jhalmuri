@@ -32,7 +32,7 @@ python manage.py createsuperuser (follow the instructions)
 python manage.py runserver 0.0.0.0:8000
 
 
-## Open a browser
+[ Open a browser ]
 
 Follow the link: http://127.0.0.1:5060/admin/
 
