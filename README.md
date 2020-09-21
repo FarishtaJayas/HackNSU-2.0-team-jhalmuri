@@ -42,7 +42,17 @@ username: Farishta
 password: jhalmuri
 
 
-How to run the app: 
+API: EndPoints 
+
+http://127.0.0.1:5060/views/profileuser_list
+http://127.0.0.1:5060/views/vendor_list
+http://127.0.0.1:5060/views/order_list
+http://127.0.0.1:5060/views/item_list
+
+u get the idea
+
+
+## How to run the app: 
 
 Download Flutter SDK
 
