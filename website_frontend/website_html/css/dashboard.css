@@ -582,6 +582,10 @@ header {
     .login-logo img {
         margin: 0 auto;
     }
+
+    .form-inline{
+        margin-right: 50px;
+    }
     .login-details .nav-tabs > li {
         text-align: center;
         width: 50%;
