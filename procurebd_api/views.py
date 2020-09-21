@@ -187,6 +187,181 @@ class VendorDetail(APIView):
         model = self.get_vendor(vendor_name)
         model.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+#Order Functions 
+
+class OrderList(APIView):
     
+    
+    def get(self, request):
+        
+        model = Vendor.objects.all()
+        serializer = VendorSerializer(model, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        
+        
+        model = Vendor.objects.all()
+        serializer = VendorSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class OrderDetail(APIView):
+    
+    
+    def get_order(self, order_name):
+        try:
+            model = Order.objects.get(order_name=order_name)
+            return model
+        except Order.DoesNotExist:
+            return 
+        
+        
+    def get(self, request, order_name):
+        
+        
+        if not self.get_order(order_name): 
+            return Response(f'{order_name} is NOT in the DATABASE')
+        serializer = OrderSerializer(self.get_order(order_name))  
+        return Response(serializer.data)
+    
+    
+    def put(self, request, order_name):
+        
+        
+        serializer = OrderSerializer(self.get_order(order_name), data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    def delete(self, request, order_name):
+        
+        
+        model = self.get_order(order_name)
+        model.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    
+#Report Functions 
 
+class ReportList(APIView):
+    
+    
+    def get(self, request):
+        
+        model = Report.objects.all()
+        serializer = ReportSerializer(model, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        
+        
+        model = Report.objects.all()
+        serializer = ReportSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ReportDetail(APIView):
+    
+    
+    def get_Report(self, report_name):
+        try:
+            model = Report.objects.get(report_name=report_name)
+            return model
+        except Report.DoesNotExist:
+            return 
+        
+        
+    def get(self, request, report_name):
+        
+        
+        if not self.get_report(report_name): 
+            return Response(f'{report_name} is NOT in the DATABASE')
+        serializer = ReportSerializer(self.get_report(report_name))  
+        return Response(serializer.data)
+    
+    
+    def put(self, request, report_name):
+        
+        
+        serializer = ReportSerializer(self.get_report(report_name), data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    def delete(self, request, report_name):
+        
+        
+        model = self.get_report(report_name)
+        model.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    
+#Transaction Functions 
+
+class TransactionList(APIView):
+    
+    
+    def get(self, request):
+        
+        model = Transactions.objects.all()
+        serializer = TransactionSerializer(model, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        
+        
+        model = Transaction.objects.all()
+        serializer = TransactionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class TransactionDetail(APIView):
+    
+    
+    def get_Report(self, transactions_name):
+        try:
+            model = Transaction.objects.get(transaction_name=transaction_name)
+            return model
+        except Transaction.DoesNotExist:
+            return 
+        
+        
+    def get(self, request, transaction_name):
+        
+        
+        if not self.get_transaction(transaction_name): 
+            return Response(f'{transaction_name} is NOT in the DATABASE')
+        serializer = TransactionSerializer(self.get_transaction(transaction_name))  
+        return Response(serializer.data)
+    
+    
+    def put(self, request, transaction_name):
+        
+        
+        serializer = TransactionSerializer(self.get_transaction(transaction_name), data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    def delete(self, request, report_name):
+        
+        
+        model = self.get_transaction(transaction_name)
+        model.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

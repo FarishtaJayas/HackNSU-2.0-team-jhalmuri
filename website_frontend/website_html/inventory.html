@@ -4,16 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
-    <link rel="stylesheet" type="text/css" href="css/inventory.css" />
     <script type="text/javascript" src="dashboard.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/inventory.js"></script>
-    <script src="./src/bootstrap-input-spinner.js"></script>
-    <script>
-    $("input[type='number']").inputSpinner()
-</script>
 </head>
 
 
@@ -28,12 +23,12 @@
                 </div>
                 <div class="navi">
                     <ul>
-                        <li ><a href="dashboard.html"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
-                        <li><a href="vendor.html"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Vendors</span></a></li>
-                        <li class="active"><a href="inventory.html"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Inventory</span></a></li>
-                        <li><a href="order.html"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Orders</span></a></li>
+                        <li ><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+                        <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Vendors</span></a></li>
+                        <li class="active"><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Inventory</span></a></li>
+                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Orders</span></a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Reports</span></a></li>
-                        <li><a href="transaction.html"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Transactions</span></a></li>
+                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Transactions</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -67,77 +62,52 @@
                                         
                                     </li>
                                 </ul>
-                                <nav class="navbar navbar-light bg-light">
-                                    <form class="form-inline">
-                                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                                    </form>
-                                  </nav>
                             </div>
                             <br>
-
-                            <table class="table thread-light" style="margin-top: 150px; width: 100%;">
-                                <thead style="color: #495057; background-color: #e9ecef; border-color: #e9ecef;">
-                                 <tr>
-                                 <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Item ID</th>
-                                 <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Item Name</th>
-                                 <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef; ;">Quantity</th>
-                                 <th style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef; ;">Price</th>
+                            <table class="table" style="width: 20%;">
+                                <thead class="thead-light">
+                                  <tr>
+                                      <div>
+                                    <th scope="col-sm-4" >Item Name</th>
+                                </div>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" >1</th>
+                                    <td>Mark</td>
+                                    <td><div class="container">
+                                        <div class="row">
+                                                            <div class="col-lg-2">
+                                                                            <div class="input-group">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" style="background-color: #0e1a35 ; color:aliceblue"  data-type="minus" data-field="">
+                                                                              <span class="glyphicon glyphicon-minus"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="10" min="1" max="100">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="quantity-right-plus btn btn-success btn-number" style="background-color: #0e1a35 ; color:aliceblue" data-type="plus" data-field="">
+                                                                                <span class="glyphicon glyphicon-plus"></span>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                        </div></td>
+                                    <td>@mdo</td>
+                                  </tr>
                                  
-                                 </tr>
-                                 </thead>
-                                 <tbody>
-                                 <tr>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">1</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"><div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                  </div></td>
-                                  <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"><div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                  </div></td>
-                                 </tr>
-                                 <tr>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">2</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"><div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                  </div></td>
-                                  <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"><div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                  </div></td>
-                                 </tr>
-                                 <tr>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">3</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;">Company name</td>
-                                 <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"><div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                  </div></td>
-                                  <td style="padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef;"><div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                  </div></td>
-                                 </tr>
-                                 
-                                 </tbody>
-                                </table>
+                                </tbody>
+                              </table>
                             
                                 </div>
                         </div>
                     </header>
                 </div>
-                
+                   
                   <footer class="footer">
                     info@procurebd.com
                   </footer>
