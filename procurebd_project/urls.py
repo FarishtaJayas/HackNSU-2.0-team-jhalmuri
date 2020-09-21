@@ -31,4 +31,16 @@ urlpatterns = [
     #Vendor URLS
     url(r'views/vendor_list/$', VendorList.as_view(), name='vendor_list'),
     url(r'views/vendor_list/(?P<vendor_name>\w+)$', VendorDetail.as_view(), name='vendor_by_name'),
+    
+    #Order URLS
+    url(r'views/order_list/$', OrderList.as_view(), name='order_list'),
+    url(r'views/order_list/(?P<order_name>\w+)$', OrderDetail.as_view(), name='order_by_name'),
+    
+    #Report URLS
+    url(r'views/report_list/$', ReportList.as_view(), name='report_list'),
+    url(r'views/report_list/(?P<report_name>\w+)$', ReportDetail.as_view(), name='report_by_name'),
+    
+    #Transaction URLS
+    url(r'views/transaction_list/$', TransactionList.as_view(), name='transaction_list'),
+    url(r'views/transaction_list/(?P<transaction_name>\w+)$', TransactionDetail.as_view(), name='transaction_by_name'),
 ]
