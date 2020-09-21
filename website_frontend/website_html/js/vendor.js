@@ -1,5 +1,5 @@
 // api url
-const api_url = "http://127.0.0.1:5060/procurebd_api/views/vendor_list/";
+const api_url = "http://127.0.0.1:5060/admin/procurebd_api/vendor/";
 
 // Defining async function
 async function getapi(url) {
@@ -26,21 +26,28 @@ function hideloader() {
 function show(data) {
 	let tab =
 		`<tr>
-		<th>Name</th>
-		<th>Mobile</th>
-		<th>Address</th>
-		<th>Email</th>
+		<th>Vendor Name</th>
+		<th>Vendor Email</th>
+		<th>Vendor Phone</th>
+		<th>Vendor Address</th>
 		</tr>`;
 
 	// Loop to access all rows
 	for (let r of data.list) {
 		tab += `<tr>
-	<td>${r.name} </td>
-	<td>${r.office}</td>
-	<td>${r.position}</td>
-	<td>${r.salary}</td>
+	<td>${r.vendor_name} </td>
+	<td>${r.vendor_email}</td>
+	<td>${r.vendor_phone}</td>
+	<td>${r.vendor_address}</td>
 </tr>`;
 	}
 	// Setting innerHTML as tab variable
-	document.getElementById("employees").innerHTML = tab;
-}
+	const vendors= document.getElementById("vendors").innerHTML = tab;
+	vendors.addEventListener("submit", function (e) {
+			e.preventDefault();
+
+			console.log("Form has been submitted");
+
+		});
+	}
+
