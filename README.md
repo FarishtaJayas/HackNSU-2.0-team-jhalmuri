@@ -1,5 +1,8 @@
 ## HackNSU-2020
 
+#Winner in the "Best Industrial Solution" category 
+
+
 HackNSU 2.0 Project
 
 
