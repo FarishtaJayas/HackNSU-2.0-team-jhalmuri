@@ -5,6 +5,7 @@
 
 HackNSU 2.0 Project
 
+<img src="images/menu.png"  width="350" >
 
 How to run the Server:
 
@@ -14,25 +15,26 @@ Download: https://www.virtualbox.org/
 
 Open bash in the root directory and run the following commands in the following pattern
 
-vagrant up 
+                
+                    vagrant up 
+                
+                    vagrant ssh
 
-vagrant ssh
+                    cd /vagrant/
 
-cd /vagrant/
+                    python -m venv ~/env
 
-python -m venv ~/env
+                    source ~/env/bin/activate
 
-source ~/env/bin/activate
+                    pip install -r requirements.txt
 
-pip install -r requirements.txt
+                    python manage.py makemigrations procurebd_api (only if it prompts to make a migration)
 
-python manage.py makemigrations procurebd_api (only if it prompts to make a migration)
+                    python manage.py migrate (only if it prompts to make a migration)
 
-python manage.py migrate (only if it prompts to make a migration)
+                    python manage.py createsuperuser (follow the instructions)
 
-python manage.py createsuperuser (follow the instructions)
-
-python manage.py runserver 0.0.0.0:8000
+                    python manage.py runserver 0.0.0.0:8000
 
 
 [ Open a browser ]
